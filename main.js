@@ -1,6 +1,15 @@
-import { lcs } from './scripts/lcs'
+import { formalAnalyzer } from './scripts/formalAnalyzer'
 
-var a = 'aggtab'
-var b = 'gxtxayb'
+let formalWords = [
+  'میتوانم',
+  'است',
+  'می‌باشد',
+  'میرود',
+  'برویم',
+  'میتواند',
+  'میخواهد',
+]
 
-console.log('lcs:>>', lcs(a, b))
+let word = 'میشه'
+
+console.log('result:>> ', formalAnalyzer(word, formalWords))
