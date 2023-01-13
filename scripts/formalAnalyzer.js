@@ -4,19 +4,15 @@ export function formalAnalyzer(word, array) {
   let similarity = 0
   let finalResult = ''
 
-  array.every((formalWord) => {
+  array.forEach((formalWord) => {
     let lcsString = lcs(formalWord, word)
 
-    console.log(`word: ${word}, formalWord: ${formalWord}, lcs: ${lcsString}`)
-
     let tempSimilarity = lcsString.length / formalWord.length
-    if (tempSimilarity > similarity && formalWord.length > word.length) {
+    if (tempSimilarity >= similarity && formalWord.length > word.length) {
       similarity = tempSimilarity
       finalResult = formalWord
     }
-
-    return true
   })
 
-  return similarity >= 0.6 ? finalResult : word
+  return similarity >= 0.75 ? finalResult : word
 }

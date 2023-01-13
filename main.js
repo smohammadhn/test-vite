@@ -2,7 +2,7 @@ import { formalAnalyzer } from './scripts/formalAnalyzer'
 import { asyncReadFile } from './scripts/playground'
 import { sentenceSplitter } from './scripts/sentenceSplitter'
 
-const formalWords = await asyncReadFile('./WordsData/testWords.txt')
+const formalWords = await asyncReadFile('./WordsData/words.txt')
 
 const textarea = document.getElementById('input-text')
 const button = document.getElementById('button')
