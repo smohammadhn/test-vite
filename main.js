@@ -14,8 +14,9 @@ const Words = asyncReadFile('./WordsData/words.txt')
 var FormalWords
 Words.then((result) => {
   FormalWords = result
+  console.log(result)
 })
 console.log(FormalWords)
 let word = 'میشه'
 
-console.log('result:>> ', formalAnalyzer(word, formalWords))
+// console.log('result:>> ', formalAnalyzer(word, formalWords))
