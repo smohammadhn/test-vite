@@ -9,9 +9,8 @@ export function formalAnalyzer(word, array) {
 
     if (lcsString === word) {
       similarity = 1
-      var subtraction = word.length - formalWord.length // تفریق طول دو کلمه
-      var rightWord = Math.abs(subtraction) // قدر مطلق گرفتن  از فاصله دو کلمه
-      finalResult = rightWord < 3 ? formalWord : word
+      let subtraction = lcsString.length - formalWord.length
+      finalResult = Math.abs(subtraction) < 3 ? formalWord : word
       return false
     }
 
