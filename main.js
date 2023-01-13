@@ -1,22 +1,18 @@
 import { formalAnalyzer } from './scripts/formalAnalyzer'
 import { asyncReadFile } from './scripts/playground'
+import { sentenceSplitter } from './scripts/sentenceSplitter'
 
-// let formalWords = [
-//   'میتوانم',
-//   'است',
-//   'می‌باشد',
-//   'میرود',
-//   'برویم',
-//   'میتواند',
-//   'میخواهد',
-// ]
-const Words = asyncReadFile('./WordsData/words.txt')
-var FormalWords
-Words.then((result) => {
-  FormalWords = result
-  console.log(result)
+const formalWords = await asyncReadFile('./WordsData/testWords.txt')
+
+const textarea = document.getElementById('input-text')
+const button = document.getElementById('button')
+
+button.addEventListener('click', () => {
+  const inputText = textarea.value
+  let tokens = sentenceSplitter(inputText)
+
+  tokens = tokens.map((token) => formalAnalyzer(token, formalWords))
+
+  console.log({ tokens })
+  console.log(tokens.join(' '))
 })
-console.log(FormalWords)
-let word = 'میشه'
-
-// console.log('result:>> ', formalAnalyzer(word, formalWords))
