@@ -13,6 +13,5 @@ button.addEventListener('click', () => {
 
   tokens = tokens.map((token) => formalAnalyzer(token, formalWords))
 
-  console.log({ tokens })
-  console.log(tokens.join(' '))
+  console.log('final result:>>', tokens.join(' '))
 })
